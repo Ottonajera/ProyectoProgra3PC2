@@ -9,7 +9,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>21</maven.compiler.release>
-        <exec.mainClass>agencia.cliente.registro.ServidorCentral</exec.mainClass>
+        <exec.mainClass>agencia.cliente.registro.PrincipalRegistro</exec.mainClass>
     </properties>
     
     <dependencies>
