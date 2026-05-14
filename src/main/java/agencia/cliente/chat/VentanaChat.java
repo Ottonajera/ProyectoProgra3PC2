@@ -30,7 +30,6 @@ public class VentanaChat extends JFrame {
         setLocationRelativeTo(null);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); 
 
-        // Interfaz
         areaMensajes = new JTextArea();
         areaMensajes.setEditable(false);
         areaMensajes.setLineWrap(true);
@@ -44,7 +43,6 @@ public class VentanaChat extends JFrame {
         panelInferior.add(btnEnviar, BorderLayout.EAST);
         add(panelInferior, BorderLayout.SOUTH);
 
-        // Eventos
         btnEnviar.addActionListener((ActionEvent e) -> enviarMensaje());
         campoEscribir.addActionListener((ActionEvent e) -> enviarMensaje()); 
 

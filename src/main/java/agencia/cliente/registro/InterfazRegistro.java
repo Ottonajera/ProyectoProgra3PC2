@@ -25,7 +25,7 @@ public class InterfazRegistro extends JFrame {
 
     private JTextField txtDpi;
     private JComboBox<String> cmbTipoAtencion;
-    private JButton btnRegistrar, btnChat, btnBuscarHistorial; // Agregamos el botón de búsqueda
+    private JButton btnRegistrar, btnChat, btnBuscarHistorial; 
     private int contGeneral = 1, contPrioritario = 1, contEspecial = 1;
     private Socket socketPersistente;
     private ObjectOutputStream out;
@@ -42,6 +42,15 @@ public class InterfazRegistro extends JFrame {
         JPanel panelDpi = new JPanel();
         panelDpi.add(new JLabel("Número de DPI:"));
         txtDpi = new JTextField(15);
+        txtDpi.addKeyListener(new java.awt.event.KeyAdapter() {
+            @Override
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                char c = evt.getKeyChar();
+                if (!Character.isDigit(c) || txtDpi.getText().length() >= 13) {
+                    evt.consume();
+                }
+            }
+        });
         panelDpi.add(txtDpi);
         
         JPanel panelTipo = new JPanel();
@@ -93,7 +102,7 @@ public class InterfazRegistro extends JFrame {
                 "No se pudo conectar al servidor. Asegúrese de que esté encendido.", 
                 "Error de Red", JOptionPane.ERROR_MESSAGE);
             btnRegistrar.setEnabled(false); 
-            btnBuscarHistorial.setEnabled(false); // Desactivamos si no hay red
+            btnBuscarHistorial.setEnabled(false); 
         }
     }
 
